@@ -5,6 +5,7 @@ import useForm from '../../Hooks/useForm'
 import useFetch from '../../Hooks/useFetch'
 import { PASSWORD_LOST } from '../../api'
 import Error from '../Helper/Error'
+import Head from '../Helper/Head'
 
 const LoginPasswordLost = () => {
   const login = useForm()
@@ -15,16 +16,16 @@ const LoginPasswordLost = () => {
     if (login.validade()) {
       const { url, options } = PASSWORD_LOST({
         login: login.value,
-        url: 'https://localhost:3000/login/perdeu',
+        url: window.location.href.replace('perdeu', 'resetar'),
       })
-
       const { json } = await request(url, options)
       console.log(json)
     }
   }
 
   return (
-    <section>
+    <section className="animeLeft">
+      <Head title="Perdeu a senha" />
       <h1 className="title">Perdeu a senha?</h1>
       {data ? (
         <p style={{ color: '#4c1' }}>{data}</p>
