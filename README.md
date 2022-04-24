@@ -1,4 +1,4 @@
-# Animais Fantásticos
+# Rede social Dogs
 
 <p style="font-size: 16px;">Dogs é uma rede social para cachorros desenvolvido com React-JS.</p>
 <hr>
